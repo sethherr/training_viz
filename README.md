@@ -12,7 +12,7 @@ My goal is to make it clear what wattage I can generate at what heartrate - and 
 
 | What            | Install             |
 | --------------- | -------------------------- |
-| Elixir 1.2.1    | Someday I want to have a elixir version manager, instead of `brew install elixir`  |
+| Elixir 1.2.2    | Someday I want to have a elixir version manager, instead of `brew install elixir`  |
 | Node Version Manager (nvm) | [install info](https://github.com/creationix/nvm) |
 | Node 5.6.0 | install with nvm - `nvm install && npm install` |
 | PostgreSQL 9.4  | `brew install postgresql` |
