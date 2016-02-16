@@ -1,4 +1,4 @@
-# TrainingViz
+# TrainingViz [![Build Status](https://travis-ci.org/sethherr/training_viz.svg?branch=master)](https://travis-ci.org/sethherr/training_viz)
 
 Visualizing the data from biking with data things.
 
@@ -14,7 +14,7 @@ My goal is to make it clear what wattage I can generate at what heartrate - and 
 | --------------- | -------------------------- |
 | Elixir 1.2.2    | Someday I want to have a elixir version manager, instead of `brew install elixir`  |
 | Node Version Manager (nvm) | [install info](https://github.com/creationix/nvm) |
-| Node 5.6.0 | install with nvm - `nvm install && npm install` |
+| Node 5.6.0 | install with nvm; `nvm install && npm install` |
 | PostgreSQL 9.4  | `brew install postgresql` |
 
 Node version is set in the [.nvmrc](/.nvmrc)
