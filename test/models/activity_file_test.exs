@@ -66,10 +66,11 @@ defmodule TrainingViz.ActivityFileTest do
 
   test 'parse_activity_file' do
     result = ActivityFile.parse_tcx_file_path('test/support/activity_file_fixture.tcx')
-    IO.inspect(Dict.values(result))
-    IO.inspect(result[:track_point])
-    assert(result == %{ride_seconds: '2399.0', activity_type: 'Biking', start_time: '2016-02-10T02:11:29.000Z'})
-    assert length(result[:track_point]) > 54000
-    assert result.first.keys == [:heartrate, :cadence, :watts, :time_point]
+    assert result[:ride_seconds] == '2399.0'
+    assert result[:activity_type] == 'Biking'
+    assert result[:start_time] == '2016-02-10T02:11:29.000Z'
+    assert length(result[:track_points]) > 2000
+    IO.inspect List.first(result[:track_points])
+    assert Dict.keys(List.first(result[:track_points])) == [:cadence, :heartrate, :time_point, :watts]
   end
 end

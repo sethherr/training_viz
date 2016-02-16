@@ -27,7 +27,7 @@ defmodule TrainingViz.ActivityFile do
   end
 
   def parse_tcx_file_path(file_path) do
-    File.stream!(file_path) |> xpath(
+    stream = File.stream!(file_path) |> xpath(
         ~x"//TrainingCenterDatabase/Activities/Activity",
           activity_type: ~x"@Sport",
           start_time: ~x"Lap/@StartTime",
@@ -44,7 +44,7 @@ defmodule TrainingViz.ActivityFile do
 
   def parse_track_point_xml(xml_data) do
     xml_data |> xpath(
-      # ~x"//Trackpoint",
+      ~x"//Trackpoint",
         cadence: ~x"Cadence/text()",
         heartrate: ~x"HeartRateBpm/Value/text()",
         watts: ~x"Extensions/TPX/Watts/text()",
