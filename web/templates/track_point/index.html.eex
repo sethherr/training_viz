@@ -1,0 +1,32 @@
+<h2>Listing track points</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>File name</th>
+      <th>Heartrate</th>
+      <th>Watts</th>
+      <th>Ride time</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for track_point <- @track_points do %>
+    <tr>
+      <td><%= track_point.file_name %></td>
+      <td><%= track_point.heartrate %></td>
+      <td><%= track_point.watts %></td>
+      <td><%= track_point.ride_time %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: track_point_path(@conn, :show, track_point), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: track_point_path(@conn, :edit, track_point), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: track_point_path(@conn, :delete, track_point), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New track point", to: track_point_path(@conn, :new) %>

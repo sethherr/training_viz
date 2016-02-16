@@ -1,0 +1,6 @@
+<h2>Edit track point</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: track_point_path(@conn, :update, @track_point) %>
+
+<%= link "Back", to: track_point_path(@conn, :index) %>

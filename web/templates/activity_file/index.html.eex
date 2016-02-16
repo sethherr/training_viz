@@ -1,0 +1,34 @@
+<h2>Listing activity files</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Activity type</th>
+      <th>File name</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Ride seconds</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for activity_file <- @activity_files do %>
+    <tr>
+      <td><%= activity_file.activity_type %></td>
+      <td><%= activity_file.file_name %></td>
+      <td><%= activity_file.start_time %></td>
+      <td><%= activity_file.end_time %></td>
+      <td><%= activity_file.ride_seconds %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: activity_file_path(@conn, :show, activity_file), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: activity_file_path(@conn, :edit, activity_file), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: activity_file_path(@conn, :delete, activity_file), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New activity file", to: activity_file_path(@conn, :new) %>

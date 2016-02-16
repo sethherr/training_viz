@@ -1,0 +1,28 @@
+<h2>Show track point</h2>
+
+<ul>
+
+  <li>
+    <strong>File name:</strong>
+    <%= @track_point.file_name %>
+  </li>
+
+  <li>
+    <strong>Heartrate:</strong>
+    <%= @track_point.heartrate %>
+  </li>
+
+  <li>
+    <strong>Watts:</strong>
+    <%= @track_point.watts %>
+  </li>
+
+  <li>
+    <strong>Ride time:</strong>
+    <%= @track_point.ride_time %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: track_point_path(@conn, :edit, @track_point) %>
+<%= link "Back", to: track_point_path(@conn, :index) %>

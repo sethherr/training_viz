@@ -1,0 +1,6 @@
+<h2>New activity file</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: activity_file_path(@conn, :create) %>
+
+<%= link "Back", to: activity_file_path(@conn, :index) %>

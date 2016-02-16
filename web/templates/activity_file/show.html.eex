@@ -1,0 +1,33 @@
+<h2>Show activity file</h2>
+
+<ul>
+
+  <li>
+    <strong>Activity type:</strong>
+    <%= @activity_file.activity_type %>
+  </li>
+
+  <li>
+    <strong>File name:</strong>
+    <%= @activity_file.file_name %>
+  </li>
+
+  <li>
+    <strong>Start time:</strong>
+    <%= @activity_file.start_time %>
+  </li>
+
+  <li>
+    <strong>End time:</strong>
+    <%= @activity_file.end_time %>
+  </li>
+
+  <li>
+    <strong>Ride seconds:</strong>
+    <%= @activity_file.ride_seconds %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: activity_file_path(@conn, :edit, @activity_file) %>
+<%= link "Back", to: activity_file_path(@conn, :index) %>
